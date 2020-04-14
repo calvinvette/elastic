@@ -28,11 +28,6 @@ sudo yum install java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64
 
 Now we can install Elasticsearch itself.
 
-First let’s add the Elasticsearch GPG key to our VM
-```bash
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-```
-
 Now we need to add the Elasticsearch repo to our VM. 
 ```bash
 cd ~/downloads
@@ -41,7 +36,7 @@ wget https://github.com/calvinvette/elastic/blob/master/elasticsearch7.repo
 sudo cp downloads/elasticsearch* /etc/yum.repos.d/
 ```
 
-Finally let’s install Elasticsearch
+Finally let’s install Elasticsearch (note that the repos are disabled by default):
 ```bash
 sudo yum update -y
 # For ES6, use: 
